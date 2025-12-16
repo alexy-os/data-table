@@ -36,7 +36,7 @@ export interface BoxProps
 }
 
 export const Box = forwardRef<HTMLElement, BoxProps>(
-  ({ 
+  ({
     component = "div",
     className,
     children,
@@ -57,9 +57,68 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
     direction, align, justify, wrap, gap,
     // Aspect ratio props
     aspect,
-    ...props 
+    // Extract known DOM props and custom props (exclude key)
+    id,
+    role,
+    tabIndex,
+    onClick,
+    onChange,
+    onFocus,
+    onBlur,
+    onMouseEnter,
+    onMouseLeave,
+    onKeyDown,
+    onKeyUp,
+    type,
+    value,
+    placeholder,
+    disabled,
+    checked,
+    name,
+    htmlFor,
+    href,
+    target,
+    rel,
+    src,
+    alt,
+    title,
+    colSpan,
+    rowSpan,
+    ...otherProps
   }, ref) => {
     const Element = component as ElementType;
+
+    // Filter out any remaining unknown props that shouldn't go to DOM
+    // Key is handled by React automatically and should not be spread
+    const domProps = {
+      id,
+      role,
+      tabIndex,
+      onClick,
+      onChange,
+      onFocus,
+      onBlur,
+      onMouseEnter,
+      onMouseLeave,
+      onKeyDown,
+      onKeyUp,
+      type,
+      value,
+      placeholder,
+      disabled,
+      checked,
+      name,
+      htmlFor,
+      href,
+      target,
+      rel,
+      src,
+      alt,
+      title,
+      colSpan,
+      rowSpan,
+      ...otherProps
+    };
 
     return (
       <Element
@@ -79,7 +138,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
           aspectRatioVariants({ aspect }),
           className
         )}
-        {...props}
+        {...domProps}
       >
         {children}
       </Element>

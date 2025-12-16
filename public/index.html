@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTables - UI8Kit + React Table</title>
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Custom CSS with shadcn color variables -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+    :root {
+      --background: hsl(0 0% 97.2549%);
+      --foreground: hsl(240 3.3333% 11.7647%);
+      --card: hsl(0 0% 100%);
+      --card-foreground: hsl(240 3.3333% 11.7647%);
+      --popover: hsl(0 0% 100%);
+      --popover-foreground: hsl(240 3.3333% 11.7647%);
+      --primary: hsl(211.2941 100% 50%);
+      --primary-foreground: hsl(0 0% 100%);
+      --secondary: hsl(0 0% 94.1176%);
+      --secondary-foreground: hsl(0 0% 29.0196%);
+      --muted: hsl(0 0% 94.1176%);
+      --muted-foreground: hsl(240 2.2222% 44.1176%);
+      --accent: hsl(221.3796 100.2424% 94.3190%);
+      --accent-foreground: hsl(216.3164 75.9906% 49.0141%);
+      --destructive: hsl(3.1884 100% 59.4118%);
+      --destructive-foreground: hsl(0 0% 100%);
+      --border: hsl(0 0% 87.8431%);
+      --input: hsl(0 0% 100%);
+      --ring: hsl(211.2941 100% 50%);
+      --font-sans: 'Nunito', sans-serif;
+      --radius: 0.625rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      line-height: 1.6;
+    }
+
+    #root {
+      min-height: 100vh;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--border));
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--ring));
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="../src/index.tsx"></script>
+</body>
+</html>
