@@ -1,5 +1,24 @@
 {
+  "name": "data-table",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "repository": "https://github.com/alexy-os/data-table.git",
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.525.0",
+    "tailwind-merge": "^3.3.1",
     "react-table": "^7.8.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3"
   }
 }
